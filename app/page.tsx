@@ -1,11 +1,16 @@
 import Image from "next/image";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <div className="relative flex min-h-screen flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+      <div className="absolute right-6 top-6 z-10">
+        <ThemeToggle />
+      </div>
+
+      <main className="flex w-full max-w-3xl flex-1 flex-col items-center justify-between bg-white px-16 py-32 dark:bg-black sm:items-start">
         <Image
-          className="dark:invert h-5 w-[100px]"
+          className="h-5 w-[100px] dark:invert"
           src="/next.svg"
           alt="Next.js logo"
           width={100}
@@ -46,7 +51,7 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             <Image
-              className="dark:invert h-[14px] w-4"
+              className="h-[14px] w-4 dark:invert"
               src="/vercel.svg"
               alt="Vercel logomark"
               width={16}
