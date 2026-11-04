@@ -1,18 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  experimental: {
-    agentFeedback: true,
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "i.ibb.co" },
+      { protocol: "https", hostname: "lh3.googleusercontent.com" },
+    ],
   },
-  reactCompiler: true,
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
+  async rewrites() {
+    return [
+      {
+        source: "/api/server/:path*",
+        destination: `${process.env.API_URL}/api/:path*`,
       },
-    },
+    ];
   },
 };
 
