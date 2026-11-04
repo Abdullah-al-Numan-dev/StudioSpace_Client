@@ -101,15 +101,15 @@ export default function Footer() {
           <p className="mb-3 text-sm opacity-70">
             Get new studio listings and booking tips once a month.
           </p>
-          <form onSubmit={handleSubscribe} className="join w-full">
+          <form onSubmit={handleSubscribe} className="flex w-full gap-2">
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
-              className="input input-bordered join-item w-full"
+              className="input input-bordered w-full min-w-0"
             />
-            <button type="submit" className="btn btn-primary join-item">
+            <button type="submit" className="btn btn-primary">
               Join
             </button>
           </form>
