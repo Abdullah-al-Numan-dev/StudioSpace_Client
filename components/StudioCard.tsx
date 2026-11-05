@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { FiAperture, FiMapPin, FiStar } from "react-icons/fi";
 import type { Studio } from "@/lib/types";
+import WishlistButton from "./WishlistButton";
+
 
 export default function StudioCard({ studio }: { studio: Studio }) {
   const [broken, setBroken] = useState(false);
@@ -32,6 +34,7 @@ export default function StudioCard({ studio }: { studio: Studio }) {
           <FiStar className="text-warning" />
           {studio.rating ? studio.rating.toFixed(1) : "New"}
         </span>
+        <WishlistButton studioId={studio._id} />
       </div>
 
       <div className="flex flex-1 flex-col gap-2 p-5">

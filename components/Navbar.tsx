@@ -22,6 +22,7 @@ const userLinks = [
   { href: "/add-studio", label: "Add New Studio" },
   { href: "/my-listings", label: "My Studio Listings" },
   { href: "/my-bookings", label: "My Bookings" },
+  { href: "/wishlist", label: "Saved Studios" },
 ];
 
 export default function Navbar() {

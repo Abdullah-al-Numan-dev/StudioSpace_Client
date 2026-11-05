@@ -4,6 +4,7 @@ import ThemeProvider from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
+import WishlistProvider from "@/components/WishlistProvider";
 
 export const metadata: Metadata = {
   title: "StudioSpace | Book Creative Studios by the Hour",
@@ -20,9 +21,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className="flex min-h-screen flex-col bg-base-100 text-base-content">
         <ThemeProvider>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <WishlistProvider>
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </WishlistProvider>
           <Toaster richColors position="top-right" />
         </ThemeProvider>
       </body>
