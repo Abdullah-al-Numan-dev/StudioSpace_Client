@@ -119,6 +119,7 @@ export default async function StudioDetailsPage({
                         </ul>
 
                         <BookingButton
+                            maxCapacity={studio.maxCapacity}
                             studioId={studio._id}
                             title={studio.title}
                             hourlyRate={studio.hourlyRate}
